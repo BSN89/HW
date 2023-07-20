@@ -20,7 +20,10 @@ export const HW3 = (): JSX.Element => {
   };
 
   const handleSave = (): void => {
-      setTexts([currentText, ...texts])// ЗАСЕТАТЬ БЫ ТЕКСТ В texts И НЕ ПОТЕРЯТЬ НАПУТСТВИЕ ИЗ ПРОШЛОГО ВЕКА)
+      if(currentText.trim() === ""){
+          return
+      }
+      setTexts([...texts, currentText])// ЗАСЕТАТЬ БЫ ТЕКСТ В texts И НЕ ПОТЕРЯТЬ НАПУТСТВИЕ ИЗ ПРОШЛОГО ВЕКА)
       setCurrentText('') // А ЗАТЕМ УБРАТЬ ЗА СОБОЙ В currentText
   };
 
